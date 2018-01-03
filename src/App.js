@@ -34,6 +34,7 @@ class App extends Component {
           <h1 className="App-title">React Learning</h1>
         </header>
         <p className="App-intro">Let's learn JSX. <span>{this.sayhi('sunhaoxiang')}</span></p>
+        {/* <p className="App-intro">Let's learn JSX. <span>{this.sayhi('sunhaoxiang').bind(this)}</span></p> */}
         <p className="App-intro"onClick={this.changeHome}>home:{this.state.home}</p>
       </div>
     )
