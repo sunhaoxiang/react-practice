@@ -3,9 +3,15 @@ import './App.css'
 import List from './List'
 import Header from './Header'
 
+let data = [
+  {text : 'text1'},
+  {text : 'text2'},
+  {text : 'text3'}
+]
+
 class App extends Component {
-  constructor() {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       home: 'luoyang'
     }
@@ -28,13 +34,14 @@ class App extends Component {
     return `Hi,${name}`
   }
   render () {
+    let list = data.map( (e ,i) => <List key={i} {...e}/>)
     return (
       <div className="App">
         <Header/>
         <p className="App-intro">Let's learn JSX. <span>{this.sayhi('sunhaoxiang')}</span></p>
         {/* <p className="App-intro">Let's learn JSX. <span>{this.sayhi('sunhaoxiang').bind(this)}</span></p> */}
         <p className="App-intro"onClick={this.changeHome}>home:{this.state.home}</p>
-        <List home="home" list="list" about="about"/>
+        {list}
       </div>
     )
   }
