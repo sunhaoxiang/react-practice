@@ -3,8 +3,8 @@ import logo from './logo.svg'
 import './App.css'
 
 class Header extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       logo: logo,
       title: 'React Learning'
