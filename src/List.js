@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import ListTitle from './ListTitle'
 
 class List extends Component {
   render () {
     return (
-      <div>{this.props.text}</div>
+      <div>
+        <ListTitle/>
+        <div>{this.props.text}</div>
+      </div>
     )
   }
 }
