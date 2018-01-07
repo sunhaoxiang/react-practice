@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Nav extends Component {
+class List extends Component {
   constructor () {
     super()
     this.state = {
@@ -23,4 +23,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav
+export default List
