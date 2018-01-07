@@ -34,11 +34,15 @@ class App extends Component {
     return `Hi,${name}`
   }
   render () {
-    let list = data.map( (e ,i) => <List key={i} {...e}/>)
+    let list = data.map( (e ,i) => {
+      return (
+        <List key={i} {...e}/>
+      )
+    })
     return (
       <div className="App">
         <Header/>
-        <p className="App-intro">Let's learn JSX. <span>{this.sayhi('sunhaoxiang')}</span></p>
+        <p className="App-intro">Let's learn React. <span>{this.sayhi('sunhaoxiang')}</span></p>
         {/* <p className="App-intro">Let's learn JSX. <span>{this.sayhi('sunhaoxiang').bind(this)}</span></p> */}
         <p className="App-intro"onClick={this.changeHome}>home:{this.state.home}</p>
         {list}
