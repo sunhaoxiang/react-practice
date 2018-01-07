@@ -12,6 +12,7 @@ let data = [
 
 class App extends Component {
   constructor (props) {
+    console.log('constructor')
     super(props)
     this.state = {
       home: 'luoyang'
@@ -20,8 +21,32 @@ class App extends Component {
     this.log = this.log.bind(this)
   }
 
+  componentWillMount () {
+    console.log('componentWillMount')
+  }
+
+  componentDidMount () {
+    console.log('componentDidMount')
+  }
+
+  shouldComponentUpdate (nextProps, nextState) {
+    console.log('***')
+    console.log(nextProps)
+    console.log(nextState)
+    console.log('***')
+    return true
+  }
+
+  componentWillUpdate () {
+    console.log('componentWillUpdate')
+  }
+
+  componentDidUpdate () {
+    console.log('componentDidUpdate')
+  }
+
   getChildContext() {
-    return {title: 'this is title'}
+    return {title: 'this is a title'}
   }
 
   // 箭头函数this指向外层，不需要bind(this)
@@ -48,6 +73,7 @@ class App extends Component {
   }
 
   render () {
+    console.log('render')
     let list = data.map( (e ,i) => {
       return (
         <List log={this.log} key={i} {...e}/>

@@ -4,7 +4,7 @@ import ListTitle from './ListTitle'
 
 class List extends Component {
   render () {
-    let {log} = this.props
+    let { log } = this.props
     return (
       <div>
         <ListTitle/>
