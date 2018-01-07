@@ -4,10 +4,11 @@ import ListTitle from './ListTitle'
 
 class List extends Component {
   render () {
+    let {log} = this.props
     return (
       <div>
         <ListTitle/>
-        <div>{this.props.text}</div>
+        <div onClick = {() =>{ log('123') }}>{this.props.text}</div>
       </div>
     )
   }

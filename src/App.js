@@ -13,12 +13,11 @@ let data = [
 class App extends Component {
   constructor (props) {
     super(props)
-
     this.state = {
       home: 'luoyang'
     }
-
     this.changeHome = this.changeHome.bind(this)
+    this.log = this.log.bind(this)
   }
 
   getChildContext() {
@@ -33,26 +32,32 @@ class App extends Component {
   // }
 
   // 需要bind(this)
-  changeHome () {
+  changeHome (text) {
     this.setState({
       home: 'beijing'
     })
+    console.log(text)
   }
+
   sayhi (name) {
     return `Hi,${name}`
   }
+
+  log (text) {
+    console.log(this.state.home, text)
+  }
+
   render () {
     let list = data.map( (e ,i) => {
       return (
-        <List key={i} {...e}/>
+        <List log={this.log} key={i} {...e}/>
       )
     })
     return (
       <div className="App">
         <Header/>
         <p className="App-intro">Let's learn React. <span>{this.sayhi('sunhaoxiang')}</span></p>
-        {/* <p className="App-intro">Let's learn JSX. <span>{this.sayhi('sunhaoxiang').bind(this)}</span></p> */}
-        <p className="App-intro"onClick={this.changeHome}>home:{this.state.home}</p>
+        <p className="App-intro"onClick={() => {this.changeHome('change')}}>home:{this.state.home}</p>
         {list}
       </div>
     )
